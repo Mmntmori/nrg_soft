@@ -1,0 +1,38 @@
+.article-list {
+
+}
+
+.article-list__item {
+
+}
+
+.article {
+
+}
+
+.article__like-btn {
+
+}
+
+.article__like-btn--active {
+
+}
+
+.article__like-btn:hover {
+}
+
+.article__delete-btn {
+
+}
+
+.article__delete-btn,
+.article__like-btn {
+    width: 20px;
+    height: 20px;
+}
+
+.article__delete-btn svg,
+.article__like-btn svg {
+    width: 100%;
+    height: 100%;
+}
