@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import LinkBlock from './components/LinkBlock/LinkBlock'
-import LinksList from './components/LinksList/LinksList'
+import LinkBlock from './components/LinkBlock/LinkBlock';
+import LinksList from './components/LinksList/LinksList';
 
 function App() {
   return (

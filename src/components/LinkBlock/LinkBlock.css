@@ -2,6 +2,9 @@
     padding: 30px 50px;
     height: 200px;
     position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .buttons__item {
@@ -14,21 +17,23 @@
 }
 
 .buttons__item:hover {
-    box-shadow: 0 0 2px 2px lightgrey;
+    box-shadow: 0 0 0px 4px lightgrey inset;
     background-color: #fff;
+    -webkit-animation-play-state: paused!important;
+    animation-play-state: paused!important;
 }
 
 .buttons__item:nth-child(1) {
     animation: floating1  3s ease infinite;
 }
 .buttons__item:nth-child(2) {
-    animation: floating2  3.5s ease infinite;
+    animation: floating2  3.2s ease infinite;
 }
 .buttons__item:nth-child(3) {
-    animation: floating3  4s ease infinite;
+    animation: floating3  3.4s ease infinite;
 }
 .buttons__item:nth-child(4) {
-    animation: floating4  4.5s ease infinite;
+    animation: floating4  3.6s ease infinite;
 }
 
 
@@ -39,7 +44,7 @@
     }
 
     50% {
-        top: 100%;
+        top: 60%
     }
 
     100% {
@@ -53,7 +58,7 @@
     }
 
     50% {
-        top: 100%;
+        top: 60%
     }
 
     100% {
@@ -67,7 +72,7 @@
     }
 
     50% {
-        top: 100%;
+        top: 60%
     }
 
     100% {
@@ -81,7 +86,7 @@
     }
 
     50% {
-        top: 100%;
+        top: 60%
     }
 
     100% {
