@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { getNewArticle } from '../../reducers/linksListReducer'
 
 function LinkBlock(props) {
-    console.log(props)
     return (
         <div className="buttons">
             <button className="buttons__item" type='button' onClick={() => { props.getNewArticle('angular') }}>
@@ -23,12 +22,7 @@ function LinkBlock(props) {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
 
-    }
-}
-
-const LinkBlockContainer = connect(mapStateToProps, { getNewArticle })(LinkBlock)
+const LinkBlockContainer = connect(null, { getNewArticle })(LinkBlock)
 
 export default LinkBlockContainer

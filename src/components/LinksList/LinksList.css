@@ -1,16 +1,9 @@
-.article-list {
-
-}
-
-.article-list__item {
-
-}
-
 .article {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .article-list__title {
@@ -31,17 +24,31 @@
 .article__like-btn {
     padding: 15px 25px;
     margin: 10px 10px;
-    position: relative;
     border-radius: 20px;
     border: none;
     background-color: lightgrey;
     margin-left: auto;
     flex: 0 0 auto;
+
 }
 
 .article__like-btn.article__like-btn--liked {
     box-shadow: 0 0 0px 4px lightgrey inset;
     background-color: #fff;
+}
+
+
+.article__like-btn.article__like-btn--liked:before {
+    display: block;
+    position: absolute;
+    width: 20px;height: 20px;
+    content: '';
+    background-image: url('/heart.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: -30px;
+    top: calc(50% - 10px);
 }
 
 .article__like-btn.article__like-btn--liked:hover {

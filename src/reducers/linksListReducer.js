@@ -42,14 +42,12 @@ const linksListReducer = (state = initialState, action) => {
             let randomInt = getRandomInt(action.list.length);
 
             return {
-                ...state, linksList: [...state.linksList,
-                {
+                ...state, linksList: [...state.linksList, {
                     id: action.list[randomInt].data.id,
                     href: action.list[randomInt].data.url,
                     header: action.list[randomInt].data.title,
                     isLiked: false
-                }
-                ]
+                }]
             }
         }
 
@@ -134,28 +132,5 @@ export const getNewArticle = (subreddit) => {
         })
     }
 }
-
-
-
-
-// export const getLinksListFromLocalStorage = () => {
-//     return({
-//         type: GET_LIST_FROM_STORAGE
-//     })
-// }
-
-
-
-
-// export const updateStatusThunk = (status) => {
-//     return (dispatch) => {
-//         updateStatus(status).then(response => {
-//             if (response.data.resultCode === 0) {
-//                 dispatch(setStatus(status))
-//             }
-//         })
-
-//     }
-// }
 
 export default linksListReducer

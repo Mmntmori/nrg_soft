@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className="wrap">
+        <h1>Кликни и получи статью по выбранной теме!</h1>
         <LinkBlock />
         <LinksList />
       </div>
