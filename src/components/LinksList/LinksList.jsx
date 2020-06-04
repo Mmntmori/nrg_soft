@@ -4,6 +4,7 @@ import Preloader from '../Preloader/Preloader';
 import { connect } from 'react-redux';
 import { switchPreloader, deleteArticle, likeArticle, setListFromLocalStorage, getListFromLocalStorage } from '../../reducers/linksListReducer'
 
+
 // Разделил на презентационную компоненту и контейнерную классовую
 const LinksList = (props) => {
     let articleElements = props.linksList.map((e, i) => {

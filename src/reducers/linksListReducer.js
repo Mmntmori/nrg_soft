@@ -8,6 +8,7 @@ const SWITCH_PRELOADER = 'SWITCH_PRELOADER',
     GET_LIST_FROM_LOCAL_STORAGE = 'GET_LIST_FROM_LOCAL_STORAGE',
     SET_LIST_FROM_LOCAL_STORAGE = 'SET_LIST_FROM_LOCAL_STORAGE';
 
+// Начальный стейт приложения
 let initialState = {
     linksList: [],
     isRequesting: false
@@ -40,14 +41,26 @@ const linksListReducer = (state = initialState, action) => {
 
         case PUSH_NEW_ARTICLE: {
             let randomInt = getRandomInt(action.list.length);
+            // Простое решение защиты от повторов статей
 
-            return {
-                ...state, linksList: [...state.linksList, {
-                    id: action.list[randomInt].data.id,
-                    href: action.list[randomInt].data.url,
-                    header: action.list[randomInt].data.title,
-                    isLiked: false
-                }]
+            let flag = false;
+            state.linksList.forEach(e => {
+                if (e.id === action.list[randomInt].data.id) {
+                    flag = true;
+                }
+            })
+            
+            if (!flag) {
+                return {
+                    ...state, linksList: [...state.linksList, {
+                        id: action.list[randomInt].data.id,
+                        href: action.list[randomInt].data.url,
+                        header: action.list[randomInt].data.title,
+                        isLiked: false
+                    }]
+                }
+            } else {
+                return state
             }
         }
 
@@ -59,7 +72,7 @@ const linksListReducer = (state = initialState, action) => {
                 let stateCopy = { ...state, linksList: [...state.linksList] }
                 for (let key in obj) {
                     stateCopy.linksList.push(obj[key]);
-                } 
+                }
                 return stateCopy
             }
 
@@ -71,7 +84,7 @@ const linksListReducer = (state = initialState, action) => {
             if (state.linksList.length !== 0) {
                 let obj = {};
                 state.linksList.forEach(e => {
-                    obj[e.id] = {...e}
+                    obj[e.id] = { ...e }
                 })
                 reactLocalStorage.setObject('articles', obj)
             }
